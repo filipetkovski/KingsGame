@@ -22,9 +22,6 @@ function addIcon(n) {
     cells[1] = document.querySelector(".div2");
     cells[2] = document.querySelector(".div3");
     cells[3] = document.querySelector(".div4");
-    const stats = document.querySelector(".stats");
-    const corectSpan = document.querySelector(".corect");
-    const closeSpan = document.querySelector(".close");
 
     if(counter === 0) {
         for(let i=0;i<4;i++) {
@@ -58,13 +55,41 @@ function addIcon(n) {
         } else {
             refresh();
         }
-        stats.style.display = "flex";
-        corectSpan.innerHTML = corect;
-        closeSpan.innerHTML = close;
+
+        addStats();
     }
     if(round > 9) {
         loser();
     }
+}
+
+function addStats() {
+    const div = document.querySelector(".stats-div");
+    const number = document.createElement("p");
+    const stats = document.createElement("div");
+    const corectSpan = document.createElement("p");
+    const closeSpan = document.createElement("p");
+    const correctP = document.createElement("p");
+    const closeP = document.createElement("p");
+
+    stats.classList.add("stats");
+    corectSpan.classList.add("corect");
+    closeSpan.classList.add("close");
+    correctP.classList.add("svgIcons");
+    closeP.classList.add("svgIcons");
+
+    number.innerHTML = round + ": ";
+    correctP.innerHTML = "&#128081;";
+    closeP.innerHTML = "&#127800;";
+    corectSpan.innerHTML = corect;
+    closeSpan.innerHTML = close;
+
+    stats.appendChild(number);
+    stats.appendChild(correctP);
+    stats.appendChild(corectSpan);
+    stats.appendChild(closeP);
+    stats.appendChild(closeSpan);
+    div.appendChild(stats);
 }
 
 //View

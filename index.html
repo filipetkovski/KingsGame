@@ -12,64 +12,64 @@
 
 </head>
 <body>
-    <div class="wrapper">
-        <div class="main">
-            <div class="won">
-                    <p class="heading">YOU WON!</p>
-                    <div>Points</div>
-                    <div class="points winPoints"></div>
-                    <button onClick="window.location.reload();" class="refresh-button">New Game</button>
-            </div>
+<div class="wrapper">
+    <div class="main">
+        <div class="won">
+            <p class="heading">YOU WON!</p>
+            <div>Points</div>
+            <div class="points winPoints"></div>
+            <button onClick="window.location.reload();" class="refresh-button">New Game</button>
+        </div>
 
-            <div class="lose">
-                    <p class="heading">YOU LOST!</p>
-                    <div>Points</div>
-                    <div class="points losePoints"></div>
-                    <button onClick="window.location.reload();" class="refresh-button">New Game</button>
-            </div>
+        <div class="lose">
+            <p class="heading">YOU LOST!</p>
+            <div>Points</div>
+            <div class="points losePoints"></div>
+            <button onClick="window.location.reload();" class="refresh-button">New Game</button>
+        </div>
 
-            <div class="name">
-                <p class="game-name">King's Game</p>
-                <div>
-                    <p>by Filip Petkovski</p>
-                    <button onclick="openInfo()" class="info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/> <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/> </svg></button>
-                </div>
+        <div class="name">
+            <p class="game-name">King's Game</p>
+            <div>
+                <p>by Filip Petkovski</p>
+                <button onclick="openInfo()" class="info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/> <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/> </svg></button>
             </div>
+        </div>
 
-            <div class="settings">
-                <div class="settings-left">
-                    <button onClick="window.location.reload();" class="refresh-button">New Game</button>
-                    <p class="turn">10</p>
-                </div>
-                <div class="stats">
-                    <p class="svgIcons">&#128081; <span class="corect"></span> </p>
-                    <p class="svgIcons">&#127800; <span class="close"></span> </p>
-                </div>
-            </div>
+        <div class="settings-left">
+            <button onClick="window.location.reload();" class="refresh-button">New Game</button>
+            <p class="turn">10</p>
+        </div>
 
-            <div class="view">
-                <div class="div1"></div>
-                <div class="div2"></div>
-                <div class="div3"></div>
-                <div class="div4"></div>
-            </div>
+        <div class="view">
+            <div class="div1"></div>
+            <div class="div2"></div>
+            <div class="div3"></div>
+            <div class="div4"></div>
+        </div>
 
-            <div class="options">
-                <div onclick="addIcon(0)" class="div cell1">&#9824;</div>
-                <div onclick="addIcon(1)" class="div cell2">&#9827;</div>
-                <div onclick="addIcon(2)" class="div cell3">&#9829;</div>
-                <div onclick="addIcon(3)" class="div cell4">&#9830;</div>
-            </div>
+        <div class="options">
+            <div onclick="addIcon(0)" class="div cell1">&#9824;</div>
+            <div onclick="addIcon(1)" class="div cell2">&#9827;</div>
+            <div onclick="addIcon(2)" class="div cell3">&#9829;</div>
+            <div onclick="addIcon(3)" class="div cell4">&#9830;</div>
+        </div>
 
-            <div class="info-div">
-                <div class="main info-main">
-                    <p>How the game works?</p>
-                    <p>Kings is a character game. The computer randomly selects a four-character combination to be guessed. Characters are chosen from a set of 4 characters, and a certain character can appear more than once. You have 10 attempts to guess the combination, and after each attempt the computer shows how many signs you guessed right and how many of those signs are in the right &#128081; or in the wrong &#127800; position. You have 5000 points and for each wrong move you get negative 496 points.</p>
-                    <button onclick="closeInfo()" class="back">Back</button>
-                </div>
+        <div class="info-div">
+            <div class="main info-main">
+                <p>How the game works?</p>
+                <p>Kings is a character game. The computer randomly selects a four-character combination to be guessed. Characters are chosen from a set of 4 characters, and a certain character can appear more than once. You have 10 attempts to guess the combination, and after each attempt the computer shows how many signs you guessed right and how many of those signs are in the right &#128081; or in the wrong &#127800; position. You have 5000 points and for each wrong move you get negative 496 points.</p>
+                <button onclick="closeInfo()" class="back">Back</button>
             </div>
-            <div class="copyright">© 2022 copyright all rights reserved</div>
+        </div>
+
+        <div class="stats-div">
+            <!--<div class="stats">
+                <p class="svgIcons">&#128081;</p>
+                <p class="svgIcons">&#127800;</p>
+            </div>-->
         </div>
     </div>
+</div>
 </body>
 </html>
