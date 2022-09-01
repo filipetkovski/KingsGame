@@ -1,0 +1,273 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    user-select: none;
+    overflow: hidden;
+}
+
+p {
+    margin: 0;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.main {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.won, .lose {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    user-select: none;
+}
+
+.won button, .lose button {
+    margin-top: 10px;
+    background-color: white;
+    color: black;
+    font-size: 2em;
+}
+
+.won div, .lose div {
+    font-size: 1.5em;
+    color: white;
+}
+
+.heading {
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+}
+
+.settings-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.turn {
+    width: 20px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    border: none;
+    padding: 10px;
+    background-color: white;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px 20px 0 20px;
+}
+
+.game-name {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+.view {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin: 30px 0 50px 0;
+    padding: 0 20px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 90px;
+    padding: 0 20px;
+}
+
+.options div {
+    height: 90px;
+    background-color: transparent;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.options .cell1 {
+    background-color: red;
+}
+.options .cell2  {
+    background-color: dodgerblue;
+}
+.options .cell3 {
+    background-color: orange;
+}
+.options .cell4 {
+    background-color: yellow;
+}
+
+.view div {
+    height: 150px;
+    background-color: transparent;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+}
+
+.refresh-button {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    padding: 5px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50px;
+    user-select: none;
+    padding: 0 20px;
+}
+
+.stats {
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.svgIcons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+span {
+    align-items: center;
+    font-size: 2em;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.info {
+    font-size: 1em;
+    background-color: transparent;
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+.name div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.info-div {
+    position: fixed;
+    left: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    transition: 0.5s;
+
+}
+
+.info-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.info-main p:nth-child(1) {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.info-main p:nth-child(2) {
+    text-align: justify;
+    margin: 30px 30px;
+    font-size: 1.2em;
+    line-height: 20px;
+}
+
+.back {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    padding: 5px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.copyright {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 0.8em;
+    }
+    .view {
+        margin: 20px 0;
+    }
+    .view div {
+        height: 80px;
+    }
+    .options {
+       max-width: 300px;
+        column-gap: 10px;
+    }
+    .options div {
+        height: 70px;
+    }
+}
+
+@media (hover: hover) {
+    .refresh-button:hover, .back:hover {
+        background-color: white;
+        color: black;
+    }
+    .info:hover {
+        opacity: 0.7;
+    }
+}
