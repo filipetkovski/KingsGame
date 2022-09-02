@@ -12,26 +12,6 @@ let intervalID;
 
 createCells();
 
-function time() {
-        intervalID = setInterval(function () {
-        const timer = document.querySelector(".time");
-        counterTime--;
-
-        if(counterTime >= 0 ) {
-            timer.innerHTML = counterTime;
-        }
-
-        if(counterTime < 6) {
-            timer.style.color = "red";
-        }
-
-        if(counterTime === 0) {
-            loser();
-        }
-    }, 1000);
-}
-
-
 //Controller
 function createCells() {
     for(let i=0;i<4;i++) {
@@ -121,37 +101,6 @@ function addStats() {
     div.appendChild(stats);
 }
 
-//View
-function winner() {
-    const winDiv = document.querySelector(".won");
-    const pointsDiv = document.querySelector(".winPoints");
-
-    winDiv.style.display = "flex";
-    pointsDiv.innerHTML = points;
-
-    clearInterval(intervalID);
-}
-
-function loser() {
-    const loseDiv = document.querySelector(".lose");
-    const pointsDiv = document.querySelector(".losePoints");
-
-    loseDiv.style.display = "flex";
-    pointsDiv.innerHTML = points;
-
-    clearInterval(intervalID);
-}
-
-function refresh() {
-    const turn = document.querySelector(".turn");
-    counter = 0;
-    round += 1;
-
-    turn.innerHTML = (10 - round);
-
-    getPoints();
-}
-
 function getPoints() {
     points -= 496;
 }
@@ -186,6 +135,54 @@ function check() {
             number[i] = cor[i];
         }
     }
+}
+
+//View
+function time() {
+    intervalID = setInterval(function () {
+        const timer = document.querySelector(".time");
+        counterTime--;
+
+        if(counterTime >= 0 ) {
+            timer.innerHTML = counterTime;
+            if(counterTime < 6) {
+                timer.style.color = "red";
+            }
+        } else {
+            points = 40;
+            loser();
+        }
+    }, 1000);
+}
+
+function winner() {
+    const winDiv = document.querySelector(".won");
+    const pointsDiv = document.querySelector(".winPoints");
+
+    winDiv.style.display = "flex";
+    pointsDiv.innerHTML = points;
+
+    clearInterval(intervalID);
+}
+
+function loser() {
+    const loseDiv = document.querySelector(".lose");
+    const pointsDiv = document.querySelector(".losePoints");
+
+    loseDiv.style.display = "flex";
+    pointsDiv.innerHTML = points;
+
+    clearInterval(intervalID);
+}
+
+function refresh() {
+    const turn = document.querySelector(".turn");
+    counter = 0;
+    round += 1;
+
+    turn.innerHTML = (10 - round);
+
+    getPoints();
 }
 
 function openInfo() {
