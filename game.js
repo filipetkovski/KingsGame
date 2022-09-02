@@ -124,7 +124,7 @@ function check() {
             }
             if(number[i] === position[j]) {
                 close += 1;
-                position[i] = 10;
+                position[j] = 10;
                 cor[i] = number[i];
                 number[i] = 5;
             }
