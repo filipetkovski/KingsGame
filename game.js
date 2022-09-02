@@ -4,10 +4,34 @@ let counter = 0;
 let corect = 0;
 let close = 0;
 let round = 0;
+let flag = 1;
+let counterTime = 120;
 
 let position = [];
 let number = [];
+let intervalID;
+
 createCells();
+
+if(flag === 1) {
+        intervalID = setInterval(function () {
+        const timer = document.querySelector(".time");
+        counterTime--;
+
+        if(counterTime >= 0 ) {
+            timer.innerHTML = counterTime;
+        }
+
+        if(counterTime < 6) {
+            timer.style.color = "red";
+        }
+
+        if(counterTime === 0) {
+            loser();
+        }
+    }, 1000);
+}
+
 
 //Controller
 function createCells() {
@@ -22,6 +46,10 @@ function addIcon(n) {
     cells[1] = document.querySelector(".div2");
     cells[2] = document.querySelector(".div3");
     cells[3] = document.querySelector(".div4");
+
+    if(round === 0 && counter === 1 ) {
+        flag = 1;
+    }
 
     if(counter === 0) {
         for(let i=0;i<4;i++) {
@@ -77,6 +105,8 @@ function addStats() {
     closeSpan.classList.add("close");
     correctP.classList.add("svgIcons");
     closeP.classList.add("svgIcons");
+    number.style.marginRight = "20px";
+    corectSpan.style.marginRight = "10px";
 
     number.innerHTML = round + ": ";
     correctP.innerHTML = "&#128081;";
@@ -99,6 +129,8 @@ function winner() {
 
     winDiv.style.display = "flex";
     pointsDiv.innerHTML = points;
+
+    clearInterval(intervalID);
 }
 
 function loser() {
@@ -107,6 +139,8 @@ function loser() {
 
     loseDiv.style.display = "flex";
     pointsDiv.innerHTML = points;
+
+    clearInterval(intervalID);
 }
 
 function refresh() {
